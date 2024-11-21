@@ -4,73 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Improve the form</title>
+    <title>Pizza Order Form</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form id="form">
-      <h2>Pizza Form</h2>
-      <div class="label">Delivery Method</div>
-      <select id="id-delivery">
-        <option>Eat in store</option>
-        <option>Pickup</option>
-        <option>Home delivery</option>
-      </select>
-      <div class="label">Name</div>
-      <input id="id-name" type="text" />
-      <div class="label">Address</div>
-      <input id="id-address" type="text" />
-      <div class="label">Phone</div>
-      <input id="id-phone" type="text" />
-      <p>We don't store your phone number beyond delivery</p>
+      <h2>Pizza Order Form</h2>
 
-      <div class="group">
-        <div class="title">Crust</div>
-        <div class="label">
-          <input id="id-crust" type="radio" value="Thin" />
+      <fieldset>
+        <legend>Delivery Information</legend>
+
+        <label for="id-delivery">Delivery Method</label>
+        <select id="id-delivery" name="delivery-method" required>
+          <option value="">Select a method</option>
+          <option value="eat-in-store">Eat in store</option>
+          <option value="pickup">Pickup</option>
+          <option value="home-delivery">Home delivery</option>
+        </select>
+
+        <label for="id-name">Name</label>
+        <input id="id-name" name="name" type="text" placeholder="Enter your name" required />
+
+        <label for="id-address">Address</label>
+        <input id="id-address" name="address" type="text" placeholder="Enter your address" required />
+
+        <label for="id-phone">Phone</label>
+        <input id="id-phone" name="phone" type="tel" placeholder="Enter your phone number" required />
+
+        <p>We don't store your phone number beyond delivery.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Crust</legend>
+
+        <label>
+          <input type="radio" name="crust" value="thin" required />
           Thin
-        </div>
-        <div class="label">
-          <input type="radio" value="Classic" />
+        </label>
+        <label>
+          <input type="radio" name="crust" value="classic" />
           Classic
-        </div>
-        <div class="label">
-          <input type="radio" value="Deep Dish" />
+        </label>
+        <label>
+          <input type="radio" name="crust" value="deep-dish" />
           Deep Dish
-        </div>
-      </div>
+        </label>
+      </fieldset>
 
-      <div class="group">
-        <div class="title">Toppings</div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Sausage" />
+      <fieldset>
+        <legend>Toppings</legend>
+
+        <label>
+          <input name="topping" type="checkbox" value="sausage" />
           Sausage
-        </div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Pepperoni" />
+        </label>
+        <label>
+          <input name="topping" type="checkbox" value="pepperoni" />
           Pepperoni
-        </div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Mushrooms" />
+        </label>
+        <label>
+          <input name="topping" type="checkbox" value="mushrooms" />
           Mushrooms
-        </div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Onions" />
+        </label>
+        <label>
+          <input name="topping" type="checkbox" value="onions" />
           Onions
-        </div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Green Peppers" />
+        </label>
+        <label>
+          <input name="topping" type="checkbox" value="green-peppers" />
           Green Peppers
-        </div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Black Olives" />
-          Back Olives
-        </div>
-        <div class="label">
-          <input name="topping" type="checkbox" value="Extra Cheese" />
-          Extra cheese
-        </div>
-      </div>
+        </label>
+        <label>
+          <input name="topping" type="checkbox" value="black-olives" />
+          Black Olives
+        </label>
+        <label>
+          <input name="topping" type="checkbox" value="extra-cheese" />
+          Extra Cheese
+        </label>
+      </fieldset>
 
       <input type="submit" value="Submit Order" />
     </form>
